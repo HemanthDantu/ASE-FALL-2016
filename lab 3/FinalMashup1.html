@@ -1,0 +1,49 @@
+
+<html ng-app="QR">
+
+<title>Qr-code</title>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+<body  ng-controller="qr">
+<input ng-model="qrsearch" id="qrsearch" placeholder="place">
+<input ng-model="item" placeholder="item to be searched" >
+<button ng-click="genrateqr()">qr</button>
+<img src="" id="result">
+
+<div ng-repeat="results in result" >
+    <table><tr><td>{{results.name}}</td></tr></table>
+
+</div>
+<style>
+body{
+background-image: url("back.jpg");
+}
+</style>
+</body>
+
+
+<script>
+    var app =  angular.module('QR', []);
+    app.controller('qr', function($scope, $http) {
+        $scope.genrateqr = function() {
+            var key=document.getElementById("qrsearch").value;
+            document.getElementById("result").src = "https://api.qrserver.com/v1/create-qr-code/?data=" + key +"&amp;size=100x100" ;
+
+            var link = $http.get("https://api.foursquare.com/v2/venues/search" +
+                    "?client_id=R2SON3XVMV1FPQKVN5C4CGCACA0U45VBF0MJOEJ10D1S5ZCW" +
+                    "&client_secret=B5GUYG0GHQIHJBTLLHDDE5HMFA2ZFKQYSGGWDRXZQYDVRJIM" +
+                    "&v=20160215&limit=5" +
+                    "&near=" + $scope.qrsearch +
+                    "&query=" + $scope.item
+            );
+            link.success(function (data){
+
+                $scope.result=data.response.venues;
+                console.log(result);
+            });
+        }
+    });
+
+</script>
+
+</html>
