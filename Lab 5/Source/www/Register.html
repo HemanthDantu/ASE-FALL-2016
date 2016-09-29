@@ -1,0 +1,47 @@
+<html ng-app="QR">
+
+<title>Qr-code</title>
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js" type="application/javascript"></script>
+<body  ng-controller="qr">
+<input ng-model="qrsearch" id="qrsearch" placeholder="place">
+</br>
+</br>
+<input ng-model="item" placeholder="item to be searched" >
+</br>
+</br>
+<button  class ="button button-dark"ng-click="genrateqr()">Search Results</button>
+</br>
+</br>
+
+<div ng-repeat="results in result" >
+  <table><tr><td>{{results.name}}
+    </br>
+    </br></td></tr></table>
+
+</div>
+</body>
+
+
+<script>
+  var app =  angular.module('QR', []);
+  app.controller('qr', function($scope, $http) {
+    $scope.genrateqr = function() {
+
+      var link = $http.get("https://api.foursquare.com/v2/venues/search" +
+        "?client_id=R2SON3XVMV1FPQKVN5C4CGCACA0U45VBF0MJOEJ10D1S5ZCW" +
+        "&client_secret=B5GUYG0GHQIHJBTLLHDDE5HMFA2ZFKQYSGGWDRXZQYDVRJIM" +
+        "&v=20160215&limit=5" +
+        "&near=" + $scope.qrsearch +
+        "&query=" + $scope.item
+      );
+      link.success(function (data){
+        $scope.result=data.response.venues;
+        console.log(result);
+      });
+    }
+  });
+</script>
+
+</html>
