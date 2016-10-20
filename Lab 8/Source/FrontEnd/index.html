@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html class="b2">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.4/angular.min.js"></script>
+    <script src="app.js"></script>
+    <link rel="stylesheet"  type="text/css" href="index_CSS.css">
+    <title>Convert</title>
+</head>
+<body ng-app=convertapp>
+<div class="b1" align="center">
+    <h1>Weight Conversions</h1>
+<div ng-controller=convertctrl align="center">
+    <div class="ib">
+        <h3>Enter weight in pounds</h3>
+    <input type="text" ng-model="F" class="c1" >
+        <input type="button" class="button"  value="Convert" ng-click="convertg()" style="background-color: cornflowerblue">
+    <p ng-model=convertcon class="b3">
+          Weight in kgs :  {{convertcon.kgs}}<br>
+          Weight in grams:  {{convertcon.Grams}}<br>
+
+    </p>
+    </div>
+</div>
+</div>
+</body>
+</html>
