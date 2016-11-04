@@ -1,0 +1,129 @@
+.h1{
+    font-family: "Lucida Sans Unicode";
+    background-image: url("img1.jpg");
+    background-size: cover;
+    color: chartreuse;
+    font-size: large;
+}
+input[type="text"] {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+input[type="email"] {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+input[type="password"] {
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+}
+.header{
+  position: absolute;
+  top: calc(50% - 35px);
+  left: calc(50% - 255px);
+  z-index: 2;
+}
+
+.header div{
+  float: left;
+  color: #fff;
+  font-family: 'Lucida Sans Unicode', Serif;
+  font-size: 35px;
+  font-weight: 200;
+}
+
+.header div span{
+  color: #5379fa !important;
+}
+.b1{
+
+    margin-top: 60px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+.b2{
+    margin-left: 450px;
+
+}
+.b3{
+    margin-left: 150px;
+    margin-top: -15px;
+
+
+}
+.f1{
+    margin-top: -10px;
+}
+.f2{
+    margin-top: -10px;
+}
+.f3{
+    margin-top: -10px;
+}
+.f4{
+    margin-top: -10px;
+}
+.f5{
+    margin-top: -10px;
+}
+.f6{
+    margin-top: -5px;
+
+}
+.a1{
+
+}
+.textbox1{
+    border-style: double;
+    border-color: springgreen;
+    font-size:13pt;
+    height:25px;
+    width:300px;
+}
+
+.textbox2{
+    border-style: double;
+    border-color: springgreen;
+    font-size:13pt;
+    height:25px;
+    width:300px;
+}
+.button {
+    background-color: chartreuse;
+
+  height: 50px;
+  width: 100px;
+  border-radius: 120px;
+  border: 1px solid white;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+#rcorners1 {
+  border-radius: 25px;
+}
+
+#rcorners2 {
+  border-radius: 25px;
+}
+
+.row
+{
+  padding-top: 50px; /* If you're making other pages, make sure there is 50px of padding to make sure the navbar doesn't overlap content! */
+  padding-bottom: 350px;
+  text-align: center;
+  color: #4d4d4d;
+  background: url("img1.jpg") no-repeat center center;
+  background-size: cover;
+}
